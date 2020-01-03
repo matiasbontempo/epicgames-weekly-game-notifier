@@ -17,4 +17,5 @@ deploy_production:
   image: node:latest
   script:
     - ssh dokku@labs.matiasbontempo.com apps:create ${CI_PROJECT_NAME} 2> /dev/null || echo "App already exists"
+    - ssh dokku@labs.matiasbontempo.com config:set ${CI_PROJECT_NAME} DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
     - git push dokku@labs.matiasbontempo.com:${CI_PROJECT_NAME} HEAD:refs/heads/master --force
