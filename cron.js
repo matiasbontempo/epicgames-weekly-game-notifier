@@ -35,12 +35,13 @@ const job = async () => {
 
 const cron = (channel) => {
   if (scheduled) {
-    if (!channel) return;
+    if (!channel || !cache) return;
     const games = JSON.parse(cache);
     channel.send('Nuevos juegos gratis en EpicGames:');
     games.forEach((o) => { channel.send(embed(o)); });
     return;
   }
+  job();
   scheduled = schedule.scheduleJob('0 */2 * * *', job); // Every two hours
   // scheduled = schedule.scheduleJob('* * * * *', job); // Every minute
 };
