@@ -41,8 +41,8 @@ const cron = (channel) => {
     games.forEach((o) => { channel.send(embed(o)); });
     return;
   }
-  // scheduled = schedule.scheduleJob('0 */2 * * *', job); // Every two hours
-  scheduled = schedule.scheduleJob('* * * * *', job); // Every minute
+  scheduled = schedule.scheduleJob('0 */2 * * *', job); // Every two hours
+  // scheduled = schedule.scheduleJob('* * * * *', job); // Every minute
 };
 
 module.exports = cron;
