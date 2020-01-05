@@ -4,9 +4,9 @@ EWGS is a Discord bot that will remind your server about EpicGames free weekly g
 
 ## Instructions
 
-First, go ahead and create a new `#updates` channel if you don't have one. Right now this step is necesary as the bot only knows how to post automatic updates there.
+First, go ahead and create a new `#updates` channel if you don't have one. Right now this step is necesary as the bot only knows how to post automatic updates there. Make sure `EpicGames Weekly Game Notifier` has `Send Messages` and `Embed Links` permissions.
 
-Then, you need to authorize the bot using the following link: <https://discordapp.com/oauth2/authorize?client_id=662478067310133248&scope=bot&permissions=3072>
+Then, you need to authorize the bot using the following link: [EWGS Authorization](https://discordapp.com/oauth2/authorize?client_id=662478067310133248&scope=bot&permissions=19456)
 
 That's it! Now EWGS will be ready to notify your server about the new *epic games* :wink:
 

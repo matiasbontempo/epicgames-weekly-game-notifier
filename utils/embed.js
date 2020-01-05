@@ -1,15 +1,14 @@
 const Discord = require('discord.js');
 
-
 const generateDate = (str) => {
-  const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-  const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   const date = new Date(str);
   const d = days[date.getDay()];
   const m = months[date.getMonth()];
   const n = date.getDate();
-  return `${d} ${n} de ${m}`;
+  return `${d}, ${m} ${n}`;
 };
 
 module.exports = ({
@@ -17,8 +16,8 @@ module.exports = ({
 }) => new Discord.RichEmbed()
   .setColor(upcoming ? '#000' : '#0078f2')
   .setTitle(title)
-  .setDescription(upcoming ? `PRÓXIMAMENTE: **${generateDate(upcoming)}**` : '**GRATIS AHORA**')
-  .setURL(`https://www.epicgames.com/store/es-ES/product/${slug}`)
+  .setDescription(upcoming ? `COMING SOON: **${generateDate(upcoming)}**` : '**FREE NOW**')
+  .setURL(`https://www.epicgames.com/store/en-US/product/${slug}`)
   // .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
   // .setDescription(description)
   // .setThumbnail(image)

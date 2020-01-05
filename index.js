@@ -1,9 +1,7 @@
-require('dotenv').config();
+const client = require('./utils/discordClient');
+const cron = require('./utils/cron');
 
-const client = require('./discordClient');
-const cron = require('./cron');
-
-const logger = require('./logger');
+const logger = require('./utils/logger');
 
 client.on('ready', () => {
   logger('Ready!');
