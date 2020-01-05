@@ -18,5 +18,5 @@ deploy_production:
   script:
     - ssh dokku@labs.matiasbontempo.com apps:create ewgn 2> /dev/null || echo "App already exists"
     - ssh dokku@labs.matiasbontempo.com config:set ewgn DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
-    - ssh dokku@labs.matiasbontempo.com storage:mount ewgn /var/lib/dokku/data/storage/ewgn:/usr/src/app/persist 2> /dev/null || echo "Mount path already exists"
+    - ssh dokku@labs.matiasbontempo.com storage:mount ewgn /var/lib/dokku/data/storage/ewgn:/app/persist 2> /dev/null || echo "Mount path already exists"
     - git push dokku@labs.matiasbontempo.com:ewgn HEAD:refs/heads/master --force
