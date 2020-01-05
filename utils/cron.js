@@ -1,13 +1,22 @@
+const fs = require('fs');
 const schedule = require('node-schedule');
-const client = require('./discordClient');
 
+const client = require('./discordClient');
 const getGames = require('./getGames');
 const embed = require('./embed');
 
 const logger = require('./logger');
 
+const cacheFile = `${__dirname}/../persist/cache.json`;
+
 let cache;
 let scheduled;
+
+try {
+  cache = fs.readFileSync(cacheFile, 'utf8');
+} catch (err) {
+  logger('Cache file not found.');
+}
 
 const job = async () => {
   logger('Started running.');
@@ -21,6 +30,13 @@ const job = async () => {
   logger('New games found!');
 
   cache = JSON.stringify(games);
+  try {
+    await fs.writeFileSync(cacheFile, JSON.stringify(games), 'utf8');
+  } catch (err) {
+    logger('Can\'t write cache file');
+    console.error(err);
+  }
+
   const updatesChannels = [];
 
   try {
