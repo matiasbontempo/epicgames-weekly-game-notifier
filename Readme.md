@@ -20,4 +20,4 @@ If you have any issue, something is not working the right way or you have any su
 
 ## Code
 
-If you want to check how the bot works or you want to contribute to it, you can check the source code here: 
+If you want to check how the bot works or you want to contribute to it, you can check the [project repositoy](https://gitlab.com/matias.bontempo/epicgames-weekly-game-notifier).
