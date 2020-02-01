@@ -28,6 +28,7 @@ const job = async () => {
   }
 
   logger('New games found!');
+  logger({ cache, games });
 
   cache = JSON.stringify(games);
   try {
